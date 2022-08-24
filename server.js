@@ -14,6 +14,9 @@ connectDB();
 
 const app = express();
 
+//Body Parser
+app.use(express.json());
+
 // app.use(logger);
 
 //dev logging middleware
