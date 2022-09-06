@@ -3,6 +3,7 @@ const colors = require('colors');
 const dotenv = require('dotenv');
 const bootcamps = require('./routes/bootcamps');
 const courses = require('./routes/courses');
+const fileupload = require('express-fileupload');
 
 // const logger = require('./middleware/logger');
 const morgan = require('morgan');
@@ -19,6 +20,12 @@ const app = express();
 
 //Body Parser
 app.use(express.json());
+
+//File uploads
+app.use(fileupload());
+
+//Set static folder
+app.use(express.static('public  ')); 
 
 // app.use(logger);
 
