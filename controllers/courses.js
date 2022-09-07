@@ -9,7 +9,6 @@ const Bootcamp = require('../models/Bootcamp');
 //@access  public
 
 exports.getCourses = asyncHandler(async (req, res, next) => {
-  let query;
   if (req.params.bootcampId) {
     const courses = await Course.find({ bootcamp: req.params.bootcampId });
 
@@ -118,3 +117,4 @@ exports.deleteCourse = asyncHandler(async (req, res, next) => {
     data: {},
   });
 });
+   

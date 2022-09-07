@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const bootcamps = require('./routes/bootcamps');
 const courses = require('./routes/courses');
 const fileupload = require('express-fileupload');
+const auth = require('./routes/auth');
 
 // const logger = require('./middleware/logger');
 const morgan = require('morgan');
@@ -25,7 +26,7 @@ app.use(express.json());
 app.use(fileupload());
 
 //Set static folder
-app.use(express.static('public  ')); 
+app.use(express.static('public  '));
 
 // app.use(logger);
 
@@ -36,6 +37,7 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use('/api/v1/bootcamps', bootcamps);
 app.use('/api/v1/courses', courses);
+app.use('/api/v1/auth', auth);
 
 app.use(errorHandler);
 
