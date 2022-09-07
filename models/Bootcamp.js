@@ -69,6 +69,11 @@ const BootcampSchema = new mongoose.Schema(
         'Other',
       ],
     },
+    user: {
+      type: mongoose.Schema.ObjectId,
+      ref: 'User',
+      required: true,
+    },
     averageRating: {
       type: Number,
       min: [1, 'Rating must be at least 1'],
