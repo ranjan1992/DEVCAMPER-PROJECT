@@ -5,6 +5,7 @@ const bootcamps = require('./routes/bootcamps');
 const courses = require('./routes/courses');
 const fileupload = require('express-fileupload');
 const auth = require('./routes/auth');
+const cookieParser = require('cookie-parser');
 
 // const logger = require('./middleware/logger');
 const morgan = require('morgan');
@@ -21,6 +22,8 @@ const app = express();
 
 //Body Parser
 app.use(express.json());
+
+app.use(cookieParser());
 
 //File uploads
 app.use(fileupload());
