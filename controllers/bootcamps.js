@@ -97,7 +97,7 @@ exports.deleteBootcamp = asyncHandler(async (req, res, next) => {
   if (bootcamp.user.toString() !== req.user.id && req.user.role !== 'admin') {
     return next(
       new ErrorResponse(
-        `User ${req.params.id} is not authorized to delete this bootcamp`,
+        `User ${req.params.id} is not authorized to  this bootcamp`,
         404
       )
     );
