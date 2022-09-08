@@ -15,6 +15,9 @@ const morgan = require('morgan');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/error');
 const xss = require('xss-clean');
+const rateLimit = require('express-rate-limit');
+const hpp = require('hpp');
+const cors = require('cors');
 
 //Load env vars
 dotenv.config({ path: './config/config.env' });
@@ -40,6 +43,20 @@ app.use(helmet());
 
 //Prevent XSS Attacks
 app.use(xss());
+
+//Enable cors
+app.use(cors());
+
+//Rate limiting
+const limiter = rateLimit({
+  windowMs: 10 * 60 * 1000,
+  max: 100,
+});
+
+app.use(limiter);
+
+//Prevent http param polution
+app.use(hpp());
 
 //Set static folder
 app.use(express.static('public  '));
