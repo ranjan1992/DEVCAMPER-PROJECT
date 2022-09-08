@@ -9,11 +9,12 @@ const cookieParser = require('cookie-parser');
 const users = require('./routes/users');
 const reviews = require('./routes/reviews');
 const mongoSanitize = require('express-mongo-sanitize');
-
+const helmet = require('helmet');
 // const logger = require('./middleware/logger');
 const morgan = require('morgan');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/error');
+const xss = require('xss-clean');
 
 //Load env vars
 dotenv.config({ path: './config/config.env' });
@@ -33,6 +34,12 @@ app.use(fileupload());
 
 //Sanitize Data
 app.use(mongoSanitize());
+
+//Set security headers
+app.use(helmet());
+
+//Prevent XSS Attacks
+app.use(xss());
 
 //Set static folder
 app.use(express.static('public  '));
