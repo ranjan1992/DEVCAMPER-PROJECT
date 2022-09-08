@@ -8,6 +8,7 @@ const auth = require('./routes/auth');
 const cookieParser = require('cookie-parser');
 const users = require('./routes/users');
 const reviews = require('./routes/reviews');
+const mongoSanitize = require('express-mongo-sanitize');
 
 // const logger = require('./middleware/logger');
 const morgan = require('morgan');
@@ -29,6 +30,9 @@ app.use(cookieParser());
 
 //File uploads
 app.use(fileupload());
+
+//Sanitize Data
+app.use(mongoSanitize());
 
 //Set static folder
 app.use(express.static('public  '));
