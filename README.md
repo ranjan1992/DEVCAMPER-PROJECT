@@ -1,10 +1,15 @@
 # Devcamper-Project
                         BOOTCAMPS
 Get All Bootcamps
+
 Get Single Bootcamp
+
 Update a Bootcamp
+
 Delete a Bootcamp
+
 Create New Bootcamp
+
 Upload a Photo for Bootcamp
 
                          COURSES
