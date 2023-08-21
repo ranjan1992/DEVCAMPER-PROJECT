@@ -72,4 +72,4 @@ Delete the reviews
                     BRIEF DESCRIPTION
 
 This is a backend project which deals with BootCamp Courses. All the above mentioned are the RESTFUL APIs built using NodeJS, Express and MongoDB database. There are many sections included which involves BootCamps, Courses, Reviews, Users and we can find out the Users and their Bootcamp courses easily through APIs. For example:
-       ##**Get All BootCamps**## at the top is an API which will get us all the BootCamps present in project.
+        ##Get All BootCamps## at the top is an API which will get us all the BootCamps present in project.
